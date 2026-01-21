@@ -29,7 +29,7 @@ class TestSchoolAPI(BaseTest):
     def test_delete_school_successful(self):
         """Test deleting a school successfully"""
         with self.app.app_context():
-            stmt =  db.select(School).where(School.name == "Escola Eixample")
+            stmt =  db.select(School).where(School.name == "Escola Gracia")
             school = db.session.execute(stmt).scalar()
             school_id = school.id
 

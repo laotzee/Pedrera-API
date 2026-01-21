@@ -2,6 +2,9 @@ from sqlalchemy import String, Integer, ForeignKey, MetaData
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 from sqlalchemy.ext.hybrid import hybrid_property
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
+
+migrate = Migrate()
 
 convention = {
     "ix": "ix_%(column_0_label)s",
@@ -23,8 +26,10 @@ class School(db.Model):
     id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str] = mapped_column(String(100), unique=True, nullable=False)
     capacity: Mapped[int] = mapped_column(Integer, nullable=False)
-    
-    students: Mapped[list[Student]] = relationship(back_populates="school")
+    students: Mapped[list[Student]] = relationship(
+            back_populates="school",
+            cascade="all, delete-orphan",
+            )
 
 class Student(db.Model):
     """Models a student"""
