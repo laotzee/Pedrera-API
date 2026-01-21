@@ -11,6 +11,12 @@ echo "Installing requirements..."
 pip install --upgrade pip
 pip install -r requirements.txt
 
+echo "Creating environment configuration..."
+cat <<EOF > .flaskenv
+FLASK_APP="app:create_app('development')"
+FLASK_DEBUG=1
+EOF
+
 if [ ! -d "migrations" ]; then
     echo "Initializing migrations folder..."
     flask db init
@@ -21,4 +27,4 @@ else
     flask db upgrade
 fi
 
-echo "Installation complete. Run 'source .venv/bin/activate' to start."
+echo "Installation complete. Run 'source .venv/bin/activate' and 'python run.py' to start."
