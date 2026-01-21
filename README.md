@@ -1,6 +1,8 @@
 # Pedrera-API
 
-Esta API REST ha sido diseñada para gestionar la administración de centros educativos y sus estudiantes en Barcelona. El sistema permite controlar la capacidad máxima de las escuelas y realizar búsquedas eficientes de información.
+Esta API REST ha sido diseñada para gestionar la administración de centros educativos y sus estudiantes en Barcelona. El sistema permite controlar la capacidad máxima de las escuelas y realizar búsquedas eficientes de información. 
+
+Puedes encontrar la documentation para las APIs en [este documento](API_README.md)
 
 ## Requisitos Previos
 
