@@ -8,6 +8,8 @@ def create_app(app_env):
     app.config.from_object(app_env[1])
     app.register_blueprint(api_blueprint)
     db.init_app(app)
+    with app.app_context():
+        db.create_all()
     migrate.init_app(app, db)
 
     return app
