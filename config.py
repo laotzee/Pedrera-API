@@ -1,7 +1,4 @@
 import os
-from dotenv import load_dotenv
-
-load_dotenv()
 
 class Config:
     SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret')
@@ -24,7 +21,3 @@ config_map = {
     'testing': ('testing', TestingConfig),
     'production': ('production', ProductionConfig),
     }
-
-load_dotenv()
-env = os.getenv('FLASK_ENV')
-app_env = config_map.get(env, config_map['production'])
