@@ -4,3 +4,4 @@ Flask-Migrate
 dotenv
 gunicorn
 sqlalchemy
+gunicorn
