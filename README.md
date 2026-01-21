@@ -12,7 +12,7 @@ Puedes encontrar la documentation para las APIs en [este documento](API_README.m
 
 ## Instalación y Ejecución
 
-### Opción A: Script de Instalación Automatizada (Recomendado)
+### Opción A: Script de Instalación Automatizada
 
 Para configurar el entorno virtual e instalar todas las dependencias de forma automática:
 
@@ -31,7 +31,7 @@ Si prefiere ejecutar la aplicación en un contenedor:
 
 1.  Inicie los servicios:
     ```bash
-    docker-compose up --build
+    docker compose up --build
     ```
 2.  La API estará disponible en `http://localhost:5000`.
 
