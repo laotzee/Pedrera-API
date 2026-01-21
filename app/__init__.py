@@ -1,5 +1,5 @@
 from flask import Flask
-from .models import db
+from .models.models import db
 from .routes.routes import api_blueprint
 
 def create_app(app_env):
