@@ -26,7 +26,7 @@ class School(db.Model):
     id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str] = mapped_column(String(100), unique=True, nullable=False)
     capacity: Mapped[int] = mapped_column(Integer, nullable=False)
-    students: Mapped[list[Student]] = relationship(
+    students: Mapped[list["Student"]] = relationship(
             back_populates="school",
             cascade="all, delete-orphan",
             )
