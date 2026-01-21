@@ -10,4 +10,4 @@ app_env = config_map.get(env, config_map['production'])
 app = create_app(app_env)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host="0.0.0.0", port=5000)
