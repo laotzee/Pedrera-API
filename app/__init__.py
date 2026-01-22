@@ -7,7 +7,7 @@ def create_app(app_env):
 
     app = Flask(__name__)
     config = config_map.get(app_env, config_map["production"])
-    app.config.from_object(app_env[1])
+    app.config.from_object(config[1])
     app.register_blueprint(api_blueprint)
     db.init_app(app)
     with app.app_context():
